@@ -3,6 +3,7 @@
 from flask import Flask
 
 app = Flask(__name__)
+app.url_map.strict_slashes = False
 
 
 @app.route('/')
@@ -16,7 +17,7 @@ def hbnb():
 
 
 @app.route('/c/<text>')
-def C_var():
+def C_var(text):
     return 'C {}'.format(text.replace('_', ' '))
 
 
